@@ -41,7 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
         texto = texto.replace (/ $/,"");
         var textoTroceado = texto.split (" ");
         var numeroPalabras = textoTroceado.length;
-        document.getElementById("span1").innerHTML = numeroPalabras;
+        if(textoTroceado.length > 2){
+            document.getElementById("span1").innerHTML = numeroPalabras;
+        }
     }
 
 
