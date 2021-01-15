@@ -9,8 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const button2 = document.createElement('button');
     const span1 = document.createElement('span');
 
-    document.button1.innerText("Contar Palabras");
-    document.button2.innerText("Restablecer");
+    document.button1.id="button1";
+    document.button2.id="button2";
+    document.span1.id="span1";
+
+    document.getElementById("button1").innerHTML = "Contar Palabras";
+    document.getElementById("button2").innerHTML = "Restablecer";
     
     capa.appendChild(button1);
     capa.appendChild(button2);
@@ -19,7 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
     button1.addEventListener('click', () => {
         contarPalabras();
     });
+    button2.addEventListener('click', () => {
+        span1.innerHTML=" ";
+    });
 
+    span1.addEventListener('hover', () => {
+        span1.innerHTML=" ";
+    });
 
     function contarPalabras(){
         var texto = document.getElementById("text-container").value;
@@ -29,6 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
         texto = texto.replace (/ $/,"");
         var textoTroceado = texto.split (" ");
         var numeroPalabras = textoTroceado.length;
-        document.getElementById("span").innerHTML = numeroPalabras;
+        document.getElementById("span1").innerHTML = numeroPalabras;
     }
+
+
+    const capa3 = document.getElementById("result-container");
+    document.body.appendChild(capa3);
+    const objeto = document.getElementsByClassName("fields-container");
+    const boton = document.getElementByClassName("form-actions");
+
+    capa3.appendChild(objeto);
+    capa3.appendChild(boton);
+
+    boton.addEventListener('click', () => {
+        var miJSON = JSON.stringify(objeto);
+        document.getElementById("json-result").innerHTML = miJSON;
+    });
 })
