@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    
     const capa = document.getElementById("buttons-container");
     document.body.appendChild(capa);
     capa.style.display = 'flex';
@@ -13,8 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.button2.id="button2";
     document.span1.id="span1";
 
+    document.getElementById("text-container").style.color = "blue";
+    document.getElementById("text-container").style.fontFamily = "Arial";
+    document.getElementById("text-container").style.fontSize = "larger";
+
     document.getElementById("button1").innerHTML = "Contar Palabras";
     document.getElementById("button2").innerHTML = "Restablecer";
+
+    document.getElementById("text-container").style.fontSize = "14";
+    document.getElementById("text-container").style.fontStyle = "bold";
+    document.getElementById("text-container").style.backgroundColor = "lime";
     
     capa.appendChild(button1);
     capa.appendChild(button2);
@@ -24,10 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         contarPalabras();
     });
     button2.addEventListener('click', () => {
-        span1.innerHTML=" ";
-    });
-
-    span1.addEventListener('hover', () => {
         span1.innerHTML=" ";
     });
 
@@ -41,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var numeroPalabras = textoTroceado.length;
         document.getElementById("span1").innerHTML = numeroPalabras;
     }
+
 
 
     const capa3 = document.getElementById("result-container");
